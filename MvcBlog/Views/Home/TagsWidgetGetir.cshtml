@@ -1,0 +1,18 @@
+﻿@{
+    Layout = null;
+
+    }
+@model IEnumerable<MvcBlog.Models.Etiket>
+
+<div class="widget blog-tags">
+                                <h5>Etiketler</h5>
+                                <ul>
+
+                                    @foreach(var item in Model ){
+                                    
+                                    <li><a href="/Etiket/Index/@item.Id" class="btn btn-default">@item.Adi (@item.Makales.Count)</a></li>
+                                    }
+                                    
+                                   
+                                </ul>
+                            </div>

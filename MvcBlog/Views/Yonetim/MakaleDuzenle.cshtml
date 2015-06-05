@@ -1,0 +1,82 @@
+﻿@model MvcBlog.Models.Makale
+
+@{
+    ViewBag.Title = "MakaleDuzenle";
+    Layout = "~/Views/Shared/YonetimMaster.cshtml";
+}
+
+<h2>MakaleDuzenle</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Makale</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Baslik)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Baslik)
+            @Html.ValidationMessageFor(model => model.Baslik)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Icerik)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Icerik)
+            @Html.ValidationMessageFor(model => model.Icerik)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.YayimTarihi)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.YayimTarihi)
+            @Html.ValidationMessageFor(model => model.YayimTarihi)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MakaleTipID)
+        </div>
+        <div class="editor-field">
+            @Html.LabelFor(model => model.MakaleTipID)
+            @Html.ValidationMessageFor(model => model.MakaleTipID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.KategoriID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("KategoriID")
+            @Html.ValidationMessageFor(model => model.KategoriID)
+        </div>
+
+        <div class="editor-label">
+            Yazar
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("YazarID")
+            @Html.ValidationMessageFor(model => model.YazarID)
+        </div>
+
+        <div class="editor-label">
+           Resim
+        </div>
+        <div class="editor-field">
+            <img src="@Model.Resim.KucukResimYol" width="150" height="150" />
+            <input type="file" name="resim" value="" />
+            
+        </div>
+        <p>
+            <input type="submit" value="Kaydet" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Listeye Don", "Makale")
+</div>

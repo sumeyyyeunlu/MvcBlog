@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "MakaleYaz";
+}
+
+@model MvcBlog.Models.Makale
+
+@using (Html.BeginForm("MakaleYaz", "Yonetim", FormMethod.Post, new { enctype="multupart/form-data" }))
+{
+<div class="tabs-top">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#top-tab1" data-toggle="tab">Makale Yaz</a></li>
+                                <li><a href="#top-tab2" data-toggle="tab">Sanat</a></li>
+                                <li><a href="#top-tab3" data-toggle="tab">Bilgisayar</a></li>
+                                <li><a href="#top-tab4" data-toggle="tab">Muzik</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="top-tab1">
+                                    
+    
+        <table>
+        <tr>
+            <td>Baslik</td>
+            <td>
+                <input class="form-control" type="text" name="Baslik" value="" placeholder="Baslik Giriniz" />
+            </td>
+          
+        </tr>
+
+        <tr>
+            <td>Kategori</td>
+            <td>
+                <select class="form-control" name="KategoriID">
+                @foreach (var kategori in ViewBag.Kategoriler)
+                { 
+                <option value="@kategori.Id">@kategori.Adi</option>
+                }
+                </select>
+            </td>
+          </tr>
+        <tr>
+            <td>Etiketler</td>
+            <td><input class="form-control" type="text" name="etiketler" value="" /></td>
+        </tr>
+        <tr>
+            <td>Resim</td>
+            <td>
+                <input type="file" name="Resim" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>Icerik</td>
+            <td><textarea class="form-control" name="Icerik" placeholder="Makale Icerigini giriniz" cols="20" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input class="form-control" type="submit" name="btnEkle" value="Kaydet" />
+             </td>
+        </tr>
+    </table>
+}
+                                </div>
+                                <div class="tab-pane" id="top-tab2">
+                                    <figure>
+                                        <img src="/Content/content/sanat.jpg" alt="" />
+                                    </figure>
+                                    <h4>
+                                        Sanat 
+                                       
+                                    </h4>
+                                    <div class="tab-text">
+                                        Sanat, en genel anlamıyla yaratıcılığın ve hayal gücünün ifadesi olarak anlaşılır. Tarih boyunca neyin sanat olarak adlandırılacağına dair fikirler sürekli değişmiş, bu geniş anlama zaman içinde değişik kısıtlamalar getirilip yeni tanımlar yaratılmıştır.[1] Bugün sanat terimi birçok kişi tarafından çok basit ve net gözüken bir kavram gibi kullanılabildiği gibi akademik çevrelerde sanatın ne şekilde tanımlanabileceği, hatta tanımlanabilir olup olmadığı bile hararetli bir tartışma konusudur.
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="top-tab3">
+                                    <figure>
+                                        <img src="/Content/content/mvc.png" alt="" />
+                                    </figure>
+                                    <h4>
+                                       MVC<br/>
+                                       Model View Controller
+                                    </h4>
+                                    <div class="tab-text">
+                                        Model-View-Controller (MVC), yazılım mühendisliği'nde kullanılan bir "mimari desen"dir. Kullanıcıya yüklü miktarda verinin sunulduğu karmaşık uygulamalarda veri ve gösterimin soyutlanması esasına dayanır. Böylece veriler (model) ve kullanıcı arayüzü (view) birbirini etkilemeden düzenlenebilir. Model-view-controller, bunu controller adı verilen ara bileşenle, veri gösterimi ve kullanıcı etkileşiminden, veri erişimi ve iş mantığını çıkarma suretiyle çözmektedir.
+                                    </div>
+                                </div>
+                                 <div class="tab-pane" id="top-tab4">
+                                    <figure>
+                                        <img src="/Content/content/ne.jpg" alt="" />
+                                    </figure>
+                                    <h4>
+                                        Neset Ertas<br/>
+                                        Turk Halk Muziginin Dehasi...
+                                    </h4>
+                                    <div class="tab-text">
+                                        Neşet Ertaş, 1957 yılının sonunda İstanbul'a gelerek Şen Çalar Plak'ta ilk plağını "Neden Garip Garip Ötersin Bülbül" adı ile babası Muharrem Ertaş'a ait bir türküyle çıkardı. Halk tarafından çok beğenilen bu plağı ardından diğer plak, kaset ve halk konserleri takip eder. Daha sonra Neşet Ertaş Ankara'ya yerleşir. Burada yaşadığı sağlık sorunları nedeniyle kardeşinin daveti üzerine Almanya'ya gider. Çocuklarının eğitimi ve sanatsal çalışmalarından dolayı uzun bir süre Almanya'da kalan sanatçı, 2000 yılında İstanbul'da verdiği konserle sahne hayatına geri dönmüştür.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                                
+
+
+
+                                    
+
+
+
+
+
+

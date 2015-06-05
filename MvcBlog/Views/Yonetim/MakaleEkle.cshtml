@@ -1,0 +1,52 @@
+﻿@model MvcBlog.Models.Makale
+
+@{
+    ViewBag.Title = "MakaleEkle";
+    Layout = null;
+    
+}
+    @using (Html.BeginForm("MakaleEkle", "Yonetim", FormMethod.Post, new { enctype="multipart/form-data"}))
+    {
+        @Html.ValidationSummary(true)
+     
+        <table>
+        <tr>
+            <td>Baslik</td>
+            <td>
+                <input class="form-control" type="text" name="Baslik" value="" placeholder="Baslik Giriniz" />
+            </td>
+          
+        </tr>
+
+        <tr>
+            <td>Kategori</td>
+            <td>
+                @Html.DropDownList("KategoriID")
+            </td>
+          </tr>
+        <tr>
+            <td>Etiketler</td>
+            <td><input class="form-control" type="text" name="etiketler" value="" /></td>
+        </tr>
+        <tr>
+            <td>Resim</td>
+            <td>
+                <input type="file" name="Resim" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>Icerik</td>
+            <td><textarea class="form-control" name="Icerik" placeholder="Makale Icerigini giriniz" cols="20" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input class="form-control" type="submit" name="btnEkle" value="Kaydet" />
+             </td>
+        </tr>
+   
+   <tr><td>@Html.ActionLink("Listeye Don", "Index")></td></tr>
+        
+   
+ </table>
+ } 

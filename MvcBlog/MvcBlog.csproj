@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F89D0DC1-743D-4C14-AC34-CBD5A634BD3F}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcBlog</RootNamespace>
+    <AssemblyName>MvcBlog</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Blog.cs" />
+    <Compile Include="Controllers\EtiketController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\MakaleController.cs" />
+    <Compile Include="Controllers\YazarController.cs" />
+    <Compile Include="Controllers\YonetimController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\aspnet_Applications.cs" />
+    <Compile Include="Models\aspnet_Membership.cs" />
+    <Compile Include="Models\aspnet_Paths.cs" />
+    <Compile Include="Models\aspnet_PersonalizationAllUsers.cs" />
+    <Compile Include="Models\aspnet_PersonalizationPerUser.cs" />
+    <Compile Include="Models\aspnet_Profile.cs" />
+    <Compile Include="Models\aspnet_Roles.cs" />
+    <Compile Include="Models\aspnet_SchemaVersions.cs" />
+    <Compile Include="Models\aspnet_Users.cs" />
+    <Compile Include="Models\aspnet_UsersInRoles.cs" />
+    <Compile Include="Models\aspnet_WebEvent_Events.cs" />
+    <Compile Include="Models\Blog_2Context.cs" />
+    <Compile Include="Models\Etiket.cs" />
+    <Compile Include="Models\Kategori.cs" />
+    <Compile Include="Models\Kullanici.cs" />
+    <Compile Include="Models\Makale.cs" />
+    <Compile Include="Models\MakaleTip.cs" />
+    <Compile Include="Models\Mapping\aspnet_ApplicationsMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_MembershipMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_PathsMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_PersonalizationAllUsersMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_PersonalizationPerUserMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_ProfileMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_RolesMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_SchemaVersionsMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_UsersInRolesMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_UsersMap.cs" />
+    <Compile Include="Models\Mapping\aspnet_WebEvent_EventsMap.cs" />
+    <Compile Include="Models\Mapping\EtiketMap.cs" />
+    <Compile Include="Models\Mapping\KategoriMap.cs" />
+    <Compile Include="Models\Mapping\KullaniciMap.cs" />
+    <Compile Include="Models\Mapping\MakaleMap.cs" />
+    <Compile Include="Models\Mapping\MakaleTipMap.cs" />
+    <Compile Include="Models\Mapping\ResimMap.cs" />
+    <Compile Include="Models\Mapping\SiteTakipMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_ApplicationsMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_MembershipUsersMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_ProfilesMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_RolesMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_UsersInRolesMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_UsersMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_WebPartState_PathsMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_WebPartState_SharedMap.cs" />
+    <Compile Include="Models\Mapping\vw_aspnet_WebPartState_UserMap.cs" />
+    <Compile Include="Models\Mapping\YorumMap.cs" />
+    <Compile Include="Models\Resim.cs" />
+    <Compile Include="Models\SiteTakip.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\vw_aspnet_Applications.cs" />
+    <Compile Include="Models\vw_aspnet_MembershipUsers.cs" />
+    <Compile Include="Models\vw_aspnet_Profiles.cs" />
+    <Compile Include="Models\vw_aspnet_Roles.cs" />
+    <Compile Include="Models\vw_aspnet_Users.cs" />
+    <Compile Include="Models\vw_aspnet_UsersInRoles.cs" />
+    <Compile Include="Models\vw_aspnet_WebPartState_Paths.cs" />
+    <Compile Include="Models\vw_aspnet_WebPartState_Shared.cs" />
+    <Compile Include="Models\vw_aspnet_WebPartState_User.cs" />
+    <Compile Include="Models\Yorum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\content\mvc.png" />
+    <Content Include="Content\content\ne.jpg" />
+    <Content Include="Content\content\sanat.jpg" />
+    <Content Include="Content\HTML Copy\404.html" />
+    <Content Include="Content\HTML Copy\about-us.html" />
+    <Content Include="Content\HTML Copy\blog-single.html" />
+    <Content Include="Content\HTML Copy\blog-single02.html" />
+    <Content Include="Content\HTML Copy\blog.html" />
+    <Content Include="Content\HTML Copy\contact.html" />
+    <Content Include="Content\content\article01.jpg" />
+    <Content Include="Content\content\article02.jpg" />
+    <Content Include="Content\content\article03.jpg" />
+    <Content Include="Content\content\article04.jpg" />
+    <Content Include="Content\content\article05.jpg" />
+    <Content Include="Content\content\author.png" />
+    <Content Include="Content\content\blog-single.png" />
+    <Content Include="Content\content\blog1.png" />
+    <Content Include="Content\content\blog2.png" />
+    <Content Include="Content\content\col1-portfolio01.jpg" />
+    <Content Include="Content\content\col1-portfolio02.jpg" />
+    <Content Include="Content\content\col1-portfolio03.jpg" />
+    <Content Include="Content\content\col1-portfolio04.jpg" />
+    <Content Include="Content\content\col1-portfolio05.jpg" />
+    <Content Include="Content\content\col1-portfolio06.jpg" />
+    <Content Include="Content\content\col1-portfolio07.jpg" />
+    <Content Include="Content\content\comment-tail-active.png" />
+    <Content Include="Content\content\comment-tail.png" />
+    <Content Include="Content\content\favicon.png" />
+    <Content Include="Content\content\footer-post01.jpg" />
+    <Content Include="Content\content\footer-post02.jpg" />
+    <Content Include="Content\content\footer-post03.jpg" />
+    <Content Include="Content\content\homepage-blog01.png" />
+    <Content Include="Content\content\homepage-blog02.png" />
+    <Content Include="Content\content\homepage-slider01.jpg" />
+    <Content Include="Content\content\homepage-slider02.jpg" />
+    <Content Include="Content\content\homepage-slider03.jpg" />
+    <Content Include="Content\content\homepage-slider04.jpg" />
+    <Content Include="Content\content\homepage-slider05.jpg" />
+    <Content Include="Content\content\hp-portfolio-three01.jpg" />
+    <Content Include="Content\content\hp-portfolio-three02.jpg" />
+    <Content Include="Content\content\hp-portfolio-three03.jpg" />
+    <Content Include="Content\content\hp-portfolio-three04.jpg" />
+    <Content Include="Content\content\hp-portfolio-three05.jpg" />
+    <Content Include="Content\content\hp-portfolio-three06.jpg" />
+    <Content Include="Content\content\hp-portfolio-three07.jpg" />
+    <Content Include="Content\content\hp-portfolio-three08.jpg" />
+    <Content Include="Content\content\hp-portfolio-three09.jpg" />
+    <Content Include="Content\content\hp-portfolio-two01.jpg" />
+    <Content Include="Content\content\hp-portfolio-two02.jpg" />
+    <Content Include="Content\content\hp-portfolio-two03.jpg" />
+    <Content Include="Content\content\hp-portfolio-two04.jpg" />
+    <Content Include="Content\content\hp-portfolio-two05.jpg" />
+    <Content Include="Content\content\hp-portfolio-two06.jpg" />
+    <Content Include="Content\content\hp-portfolio-two07.jpg" />
+    <Content Include="Content\content\hp-portfolio-two08.jpg" />
+    <Content Include="Content\content\hp-portfolio-two09.jpg" />
+    <Content Include="Content\content\hp-portfolio-two10.jpg" />
+    <Content Include="Content\content\hp-portfolio-two11.jpg" />
+    <Content Include="Content\content\hp-portfolio-two12.jpg" />
+    <Content Include="Content\content\hp-portfolio01.jpg" />
+    <Content Include="Content\content\hp-portfolio02.jpg" />
+    <Content Include="Content\content\hp-portfolio03.jpg" />
+    <Content Include="Content\content\hp-portfolio04.jpg" />
+    <Content Include="Content\content\hp-portfolio05.jpg" />
+    <Content Include="Content\content\hp-portfolio06.jpg" />
+    <Content Include="Content\content\hp-portfolio07.jpg" />
+    <Content Include="Content\content\hp-portfolio08.jpg" />
+    <Content Include="Content\content\logo.png" />
+    <Content Include="Content\content\no-photo-user.png" />
+    <Content Include="Content\content\port-slider1.jpg" />
+    <Content Include="Content\content\port-slider2.jpg" />
+    <Content Include="Content\content\port-slider3.jpg" />
+    <Content Include="Content\content\portfolio-single.jpg" />
+    <Content Include="Content\content\portfolio01.jpg" />
+    <Content Include="Content\content\showcase-background.jpg" />
+    <Content Include="Content\content\sponsor01.jpg" />
+    <Content Include="Content\content\sponsor02.jpg" />
+    <Content Include="Content\content\tab-image.jpg" />
+    <Content Include="Content\content\tab1.jpg" />
+    <Content Include="Content\content\tab2.jpg" />
+    <Content Include="Content\content\team-1.jpg" />
+    <Content Include="Content\content\team-2.jpg" />
+    <Content Include="Content\content\team-3.jpg" />
+    <Content Include="Content\content\team-4.jpg" />
+    <Content Include="Content\content\title-background.jpg" />
+    <Content Include="Content\content\twitter-logo.jpg" />
+    <Content Include="Content\content\twitter-showcase.jpg" />
+    <Content Include="Content\content\user01.png" />
+    <Content Include="Content\content\user02.png" />
+    <Content Include="Content\content\user03.png" />
+    <Content Include="Content\content\user04.png" />
+    <Content Include="Content\content\widget-post01.jpg" />
+    <Content Include="Content\content\widget-post02.jpg" />
+    <Content Include="Content\content\widget-post03.jpg" />
+    <Content Include="Content\content\widget-post04.jpg" />
+    <Content Include="Content\content\widget-post05.jpg" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\flexslider.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\fonts\flexslider-icon-2.html" />
+    <Content Include="Content\css\fonts\flexslider-icon-3.html" />
+    <Content Include="Content\css\fonts\flexslider-icon-4.html" />
+    <Content Include="Content\css\fonts\flexslider-icon.html" />
+    <Content Include="Content\css\fonts\flexslider-icond41d.html" />
+    <Content Include="Content\css\jquery.fancybox.css" />
+    <Content Include="Content\css\jquery.mCustomScrollbar.css" />
+    <Content Include="Content\css\jquery.selectBoxIt.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\mCSB_buttons.html" />
+    <Content Include="Content\css\typicons.css" />
+    <Content Include="Content\HTML Copy\content\article01.jpg" />
+    <Content Include="Content\HTML Copy\content\article02.jpg" />
+    <Content Include="Content\HTML Copy\content\article03.jpg" />
+    <Content Include="Content\HTML Copy\content\article04.jpg" />
+    <Content Include="Content\HTML Copy\content\article05.jpg" />
+    <Content Include="Content\HTML Copy\content\author.png" />
+    <Content Include="Content\HTML Copy\content\blog-single.png" />
+    <Content Include="Content\HTML Copy\content\blog1.png" />
+    <Content Include="Content\HTML Copy\content\blog2.png" />
+    <Content Include="Content\HTML Copy\content\col1-portfolio01.jpg" />
+    <Content Include="Content\HTML Copy\content\col1-portfolio02.jpg" />
+    <Content Include="Content\HTML Copy\content\col1-portfolio03.jpg" />
+    <Content Include="Content\HTML Copy\content\col1-portfolio04.jpg" />
+    <Content Include="Content\HTML Copy\content\col1-portfolio05.jpg" />
+    <Content Include="Content\HTML Copy\content\col1-portfolio06.jpg" />
+    <Content Include="Content\HTML Copy\content\col1-portfolio07.jpg" />
+    <Content Include="Content\HTML Copy\content\comment-tail-active.png" />
+    <Content Include="Content\HTML Copy\content\comment-tail.png" />
+    <Content Include="Content\HTML Copy\content\favicon.png" />
+    <Content Include="Content\HTML Copy\content\footer-post01.jpg" />
+    <Content Include="Content\HTML Copy\content\footer-post02.jpg" />
+    <Content Include="Content\HTML Copy\content\footer-post03.jpg" />
+    <Content Include="Content\HTML Copy\content\homepage-blog01.png" />
+    <Content Include="Content\HTML Copy\content\homepage-blog02.png" />
+    <Content Include="Content\HTML Copy\content\homepage-slider01.jpg" />
+    <Content Include="Content\HTML Copy\content\homepage-slider02.jpg" />
+    <Content Include="Content\HTML Copy\content\homepage-slider03.jpg" />
+    <Content Include="Content\HTML Copy\content\homepage-slider04.jpg" />
+    <Content Include="Content\HTML Copy\content\homepage-slider05.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-three01.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-three02.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-three03.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-three04.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-three05.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-three06.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-three07.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-three08.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-three09.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two01.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two02.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two03.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two04.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two05.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two06.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two07.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two08.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two09.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two10.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two11.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio-two12.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio01.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio02.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio03.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio04.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio05.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio06.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio07.jpg" />
+    <Content Include="Content\HTML Copy\content\hp-portfolio08.jpg" />
+    <Content Include="Content\HTML Copy\content\logo.png" />
+    <Content Include="Content\HTML Copy\content\no-photo-user.png" />
+    <Content Include="Content\HTML Copy\content\port-slider1.jpg" />
+    <Content Include="Content\HTML Copy\content\port-slider2.jpg" />
+    <Content Include="Content\HTML Copy\content\port-slider3.jpg" />
+    <Content Include="Content\HTML Copy\content\portfolio-single.jpg" />
+    <Content Include="Content\HTML Copy\content\portfolio01.jpg" />
+    <Content Include="Content\HTML Copy\content\showcase-background.jpg" />
+    <Content Include="Content\HTML Copy\content\sponsor01.jpg" />
+    <Content Include="Content\HTML Copy\content\sponsor02.jpg" />
+    <Content Include="Content\HTML Copy\content\tab-image.jpg" />
+    <Content Include="Content\HTML Copy\content\tab1.jpg" />
+    <Content Include="Content\HTML Copy\content\tab2.jpg" />
+    <Content Include="Content\HTML Copy\content\team-1.jpg" />
+    <Content Include="Content\HTML Copy\content\team-2.jpg" />
+    <Content Include="Content\HTML Copy\content\team-3.jpg" />
+    <Content Include="Content\HTML Copy\content\team-4.jpg" />
+    <Content Include="Content\HTML Copy\content\title-background.jpg" />
+    <Content Include="Content\HTML Copy\content\twitter-logo.jpg" />
+    <Content Include="Content\HTML Copy\content\twitter-showcase.jpg" />
+    <Content Include="Content\HTML Copy\content\user01.png" />
+    <Content Include="Content\HTML Copy\content\user02.png" />
+    <Content Include="Content\HTML Copy\content\user03.png" />
+    <Content Include="Content\HTML Copy\content\user04.png" />
+    <Content Include="Content\HTML Copy\content\widget-post01.jpg" />
+    <Content Include="Content\HTML Copy\content\widget-post02.jpg" />
+    <Content Include="Content\HTML Copy\content\widget-post03.jpg" />
+    <Content Include="Content\HTML Copy\content\widget-post04.jpg" />
+    <Content Include="Content\HTML Copy\content\widget-post05.jpg" />
+    <Content Include="Content\HTML Copy\css\bootstrap.min.css" />
+    <Content Include="Content\HTML Copy\css\flexslider.css" />
+    <Content Include="Content\HTML Copy\css\font-awesome.min.css" />
+    <Content Include="Content\HTML Copy\css\fonts\flexslider-icon-2.html" />
+    <Content Include="Content\HTML Copy\css\fonts\flexslider-icon-3.html" />
+    <Content Include="Content\HTML Copy\css\fonts\flexslider-icon-4.html" />
+    <Content Include="Content\HTML Copy\css\fonts\flexslider-icon.html" />
+    <Content Include="Content\HTML Copy\css\fonts\flexslider-icond41d.html" />
+    <Content Include="Content\HTML Copy\css\jquery.fancybox.css" />
+    <Content Include="Content\HTML Copy\css\jquery.mCustomScrollbar.css" />
+    <Content Include="Content\HTML Copy\css\jquery.selectBoxIt.css" />
+    <Content Include="Content\HTML Copy\css\main.css" />
+    <Content Include="Content\HTML Copy\css\mCSB_buttons.html" />
+    <Content Include="Content\HTML Copy\css\typicons.css" />
+    <Content Include="Content\HTML Copy\elements.html" />
+    <Content Include="Content\HTML Copy\img\blank.gif" />
+    <Content Include="Content\HTML Copy\img\fancybox_loading%402x.gif" />
+    <Content Include="Content\HTML Copy\img\fancybox_loading.gif" />
+    <Content Include="Content\HTML Copy\img\fancybox_overlay.png" />
+    <Content Include="Content\HTML Copy\img\fancybox_sprite%402x.png" />
+    <Content Include="Content\HTML Copy\img\fancybox_sprite.png" />
+    <Content Include="Content\HTML Copy\img\layout-selector.png" />
+    <Content Include="Content\HTML Copy\js\main.js" />
+    <Content Include="Content\HTML Copy\js\vendor\bootstrap.min.js" />
+    <Content Include="Content\HTML Copy\js\vendor\jquery-1.10.1.min.js" />
+    <Content Include="Content\HTML Copy\js\vendor\jquery.fancybox.pack.js" />
+    <Content Include="Content\HTML Copy\js\vendor\jquery.flexslider.js" />
+    <Content Include="Content\HTML Copy\js\vendor\jquery.hoverdir.js" />
+    <Content Include="Content\HTML Copy\js\vendor\jquery.isotope.min.js" />
+    <Content Include="Content\HTML Copy\js\vendor\jquery.isotope.perfectmasonry.js" />
+    <Content Include="Content\HTML Copy\js\vendor\jquery.mCustomScrollbar.js" />
+    <Content Include="Content\HTML Copy\js\vendor\jquery.mousewheel.js" />
+    <Content Include="Content\HTML Copy\js\vendor\jquery.raty.min.js" />
+    <Content Include="Content\HTML Copy\js\vendor\jquery.selectBoxIt.min.js" />
+    <Content Include="Content\HTML Copy\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js" />
+    <Content Include="Content\img\blank.gif" />
+    <Content Include="Content\img\fancybox_loading%402x.gif" />
+    <Content Include="Content\img\fancybox_loading.gif" />
+    <Content Include="Content\img\fancybox_overlay.png" />
+    <Content Include="Content\img\fancybox_sprite%402x.png" />
+    <Content Include="Content\img\fancybox_sprite.png" />
+    <Content Include="Content\img\layout-selector.png" />
+    <Content Include="Content\HTML Copy\index.html" />
+    <Content Include="Content\HTML Copy\index02.html" />
+    <Content Include="Content\HTML Copy\index03.html" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\vendor\bootstrap.min.js" />
+    <Content Include="Content\js\vendor\jquery-1.10.1.min.js" />
+    <Content Include="Content\js\vendor\jquery.fancybox.pack.js" />
+    <Content Include="Content\js\vendor\jquery.flexslider.js" />
+    <Content Include="Content\js\vendor\jquery.hoverdir.js" />
+    <Content Include="Content\js\vendor\jquery.isotope.min.js" />
+    <Content Include="Content\js\vendor\jquery.isotope.perfectmasonry.js" />
+    <Content Include="Content\js\vendor\jquery.mCustomScrollbar.js" />
+    <Content Include="Content\js\vendor\jquery.mousewheel.js" />
+    <Content Include="Content\js\vendor\jquery.raty.min.js" />
+    <Content Include="Content\js\vendor\jquery.selectBoxIt.min.js" />
+    <Content Include="Content\js\vendor\modernizr-2.6.2-respond-1.1.0.min.js" />
+    <Content Include="Content\HTML Copy\portfolio-1col.html" />
+    <Content Include="Content\HTML Copy\portfolio-2col.html" />
+    <Content Include="Content\HTML Copy\portfolio-3col.html" />
+    <Content Include="Content\HTML Copy\portfolio-4col.html" />
+    <Content Include="Content\HTML Copy\portfolio-fullpage.html" />
+    <Content Include="Content\HTML Copy\portfolio-fullscreen.html" />
+    <Content Include="Content\HTML Copy\portfolio-single.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="Content\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Content\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="Content\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Content\fonts\typicons.eot" />
+    <Content Include="Content\fonts\typicons.svg" />
+    <Content Include="Content\fonts\typicons.ttf" />
+    <Content Include="Content\fonts\typicons.woff" />
+    <Content Include="Content\fonts\typiconsd41d.eot" />
+    <Content Include="Content\HTML Copy\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="Content\HTML Copy\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Content\HTML Copy\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="Content\HTML Copy\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="Content\HTML Copy\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\HTML Copy\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\HTML Copy\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\HTML Copy\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\HTML Copy\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\HTML Copy\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Content\HTML Copy\fonts\typicons.eot" />
+    <Content Include="Content\HTML Copy\fonts\typicons.svg" />
+    <Content Include="Content\HTML Copy\fonts\typicons.ttf" />
+    <Content Include="Content\HTML Copy\fonts\typicons.woff" />
+    <Content Include="Content\HTML Copy\fonts\typiconsd41d.eot" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\CategoryWidgetGetir.cshtml" />
+    <Content Include="Views\Home\PostsWidgetGetir.cshtml" />
+    <Content Include="Views\Home\TagsWidgetGetir.cshtml" />
+    <Content Include="Views\Kategori\Index.cshtml" />
+    <Content Include="Views\Etiket\Index.cshtml" />
+    <Content Include="Views\Yazar\Index.cshtml" />
+    <Content Include="Views\Makale\TariheGoreListe.cshtml" />
+    <Content Include="Views\Makale\Detay.cshtml" />
+    <Content Include="Views\Yonetim\MakaleYaz.cshtml" />
+    <Content Include="Views\Kullanici\KayitOl.cshtml" />
+    <Content Include="Views\Kullanici\GirisiYap.cshtml" />
+    <Content Include="Views\Yonetim\Index.cshtml" />
+    <Content Include="Views\Yonetim\Kategori.cshtml" />
+    <Content Include="Views\Yonetim\KategoriDuzenle.cshtml" />
+    <Content Include="Views\Yonetim\KategoriEkle.cshtml" />
+    <Content Include="Views\Yonetim\MakaleEkle.cshtml" />
+    <Content Include="Views\Yonetim\Makale.cshtml" />
+    <Content Include="Views\Yonetim\MakaleListele.cshtml" />
+    <Content Include="Views\Yonetim\MakaleDuzenle.cshtml" />
+    <Content Include="Views\Shared\Admin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Resim\Buyuk\" />
+    <Folder Include="Content\Resim\Kucuk\" />
+    <Folder Include="Content\Resim\Orta\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50009/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

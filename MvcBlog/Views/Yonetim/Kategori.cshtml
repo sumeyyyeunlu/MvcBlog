@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MvcBlog.Models.Kategori>
+
+@{
+    ViewBag.Title = "Kategori";
+}
+
+<h2>Kategori</h2>
+
+<p>
+    @Html.ActionLink("Yeni Kategori", "KategoriEkle")
+</p>
+<table>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Adi)
+        </td>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adi)
+        </td>
+        <td>
+            @Html.ActionLink("Duzenle", "KategoriDuzenle", new { id=item.Id }) |
+            @Html.ActionLink("Sil", "KategoriSil", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

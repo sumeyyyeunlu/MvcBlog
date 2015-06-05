@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@model IEnumerable<MvcBlog.Models.Makale>
+<h2>Makaleler</h2>
+
+<table>
+    <tr>
+        <th>Baslik</th>
+        <th>Yazar</th>
+        <th>Kategori</th>
+        <th>Yayim Tarihi</th>
+   </tr>
+    @foreach (var item in Model) { 
+    
+    <tr>
+        <td>@item.Baslik</td>
+        <td>@item.Kullanici.Adi @item.Kullanici.Soyadi</td>
+        <td>@item.Kategori.Adi</td>
+        <td>@item.YayimTarihi</td>
+    </tr>
+    
+    }
+    
+</table>
